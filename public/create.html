@@ -57,14 +57,16 @@
     <main class="content">
         <section class="information">
             <input type="file" class="cover-image" name="cover-image"/>
-            <form class="form">
-              <h3 class="header3">Плейлист</h3>
-              <input type="text" class="description" name="description" value="Описание"/>
+            <form class="form" action="">
+              <h3 class="header-playlist">Плейлист</h3>
+              <!--<input type="text" class="description" name="description" value="Описание"/>-->
+              <textarea class = "description" placeholder="Описание"></textarea>
               <input type="text" class="name" name="name" value="Имя твоего плейлиста"/>
+              <button class="save">Сохранить</button>
             </form>
         </section>
         <hr class="line">
-        <h2 class="header2">Добавь немного музыки</h2>
+        <h2 class="add">Добавь немного музыки</h2>
         <input type="search" class="content__search" placeholder="Поиск треков"/>
         </section>
       </main>

@@ -1,43 +1,16 @@
-*{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
-}
-
 .app{
     display:grid;
-    height: 100vh;
+    height: 100%;
     grid-template-columns: 200px 1fr;
     grid-template-rows: min-content 1fr;
 }
 
-.header{
-    display:flex;
-    align-items: center;
-    padding: 5px 10px;
-    background-color: black;
-    height: 80px;
-    grid-column: 1/3;
-    
-}
-
-.header__logo{
-    display:flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-
-.header__title{
-    color: white;
-    font-size: 30px;
-}
 
 .header__nav{
     text-align: center;
     border-radius: 10px;
     background-color:#2c2c2c;
-    color: white;
+    color: #ffffff;
     margin-left: auto;
     margin-right: auto;
     padding:12px 13px;
@@ -46,42 +19,12 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
 .aside{
-    background-color: black;
-    height: auto;
+    background-color: #000000;
+    height: 100%;
 }
 
-
-.navtags{
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-evenly;
-    list-style: none;
-    color: gainsboro;
-    padding:0px 10%;
-    font-size: 12px;
-    font-weight: bold;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.navtag:hover{
-    cursor:pointer;
-    color: #ecb6f3;
-    transform: scale(1.03);
-}
-
-.another-page{
-    text-decoration: none;
-    color:gainsboro;
-}
-
-.content{
-    display: flex;
-    flex-direction: column;
-    background-color: #2c2c2c;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
 
 .content__playlists{
     display: flex;
@@ -91,8 +34,8 @@
     align-content:space-around;
 }
 
-.header2{
-    color: white;
+.header-playlists{
+    color: #ffffff;
     padding: 15px;
     font-size: 20px;
     
@@ -114,9 +57,9 @@
     border-radius: 5px;
 }
 
-.header3{
+.header-name{
     text-decoration: none;
-    color: white;
+    color: #ffffff;
     font-size: 15px;
     margin-left:35px;
     margin-top:10px;
