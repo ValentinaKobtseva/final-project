@@ -1,10 +1,3 @@
-.app{
-    display:grid;
-    height: 100vh;
-    grid-template-columns: 200px 1fr;
-    grid-template-rows: min-content 1fr;
-}
-
 .header__search{
     height: 35%;
     width: 50%;
@@ -13,18 +6,17 @@
     border-radius: 10px;
 }
 
-.aside{
-    background-color: #000000;
-    height: 100vh;
-}
-
-
-.content__recom{
+.content__recom-g{
     display: flex;
     justify-content: space-around;
     width: 100%;
     height: 40%;
-    
+}
+
+.content__recom-a{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .header-recom{
@@ -34,8 +26,8 @@
 }
 
 .geners{
-    height: 100%;
-    width: 47%;
+    height: 205px;
+    width: 500px;
     border-radius: 20px;
     background-color: rgb(151, 189, 245);
 }

@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+.app{
+    display:grid;
+    height: 100%;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: min-content 1fr;
+}
+
 .header{
     display:flex;
     align-items: center;
@@ -11,6 +18,11 @@
     background-color: #000000;
     height: 80px;
     grid-column: 1/3;
+}
+
+.aside{
+    background-color: #000000;
+    height: auto;
 }
 
 .header__logo{
