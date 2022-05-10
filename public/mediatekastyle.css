@@ -27,6 +27,7 @@
 }
 
 .playlist{
+    display: table;
     height:250px;
     width: 191px;
     margin-top: 10px;
@@ -43,11 +44,11 @@
 }
 
 .header-name{
+    text-align: center;
     text-decoration: none;
     color: #ffffff;
-    font-size: 15px;
-    margin-left:35px;
-    margin-top:10px;
+    font-size: 13px;
+    margin-top:16px;
 }
 
 .playlist:hover{

@@ -29,10 +29,12 @@
     height: 205px;
     width: 500px;
     border-radius: 20px;
-    background-color: rgb(151, 189, 245);
+    background: linear-gradient(rgb(67, 176, 235), rgb(218, 124, 236));
 }
 
 .album{
+    display: flex;
+    flex-direction: column;
     height: 160px;
     width: 150px;
     margin-top: 10px;
@@ -50,11 +52,11 @@
 }
 
 .header-name{
+    align-self: center;
     text-decoration: none;
     color: #ffffff;
-    font-size: 15px;
-    margin-left:25px;
-    font-size: 15px;
+    font-size: 11px;
+    
 }
 
 .album:hover{

@@ -22,6 +22,7 @@
     <title>React App</title>
     <link rel="stylesheet" href="./playlist.css"/>
     <link rel="stylesheet" href="./style.css"/>
+    <script src="./playlist.js" type="module"></script>
   </head>
   <body class="app">
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -48,7 +49,7 @@
             <li class="navtag"><i class="fa fa-home fa-2x"></i> Главная</li>
         </a>
         <a href="./mediateka.html" class="another-page" href="/">
-            <li class="navtag"><i class="fa fa-book fa-2x" aria-hidden="true"></i> Моя медиатека</li>
+            <li class="navtag"><i class="fa fa-book fa-2x" aria-hidden="true"></i> LoFi медиатека</li>
         </a>
         <a href="./create.html" class="another-page" href="/">
             <li class="navtag"><i class="fa fa-plus-square-o fa-2x" aria-hidden="true"></i> Создать плейлист</li>
@@ -57,22 +58,26 @@
     </aside>
     <main class="music-content">
         <section class="about">
-            <input type="file" class="cover-image" name="cover-image"/>
+            <img class="cover-image" name="cover-image"/>
             <form class="form">
               <h3 class="header-playlist">Плейлист</h3>
-              <input type="text" class="name" name="name" value="Имя твоего плейлиста"/>
-              <!--<input type="text" class="description" name="description"/>-->
+              <h3 class="name" name="name">Имя твоего плейлиста</h3>
               <textarea class = "description"></textarea>
               <adress class="author">Автор плейлиста</adress>
             </form>
         </section>
-        <button class="btn" type="button" value="Мое значение"><i class="fa fa-play" aria-hidden="true"></i></button>
+        <section class="buttons">
+          <button class="btn" type="button" value="Мое значение"><i class="fa fa-play" aria-hidden="true"></i></button>
+          <button class="btn2" type="button" value="Мое значение"><i class="fa fa-pause" aria-hidden="true"></i></button>
+        </section>
         <ul class="information">
             <li class="inf">Название</li>
             <li class="inf">Альбом</li>
             <li class="inf">Длительность</li>
         </ul>
         <hr class="line">
+        <section class="tracks">
+          
         </section>
       </main>
     </body>
