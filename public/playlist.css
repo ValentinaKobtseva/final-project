@@ -107,3 +107,56 @@
     align-self: center;
 }
 
+.pause{
+    margin-left:5px;
+    width:30px;
+    background-color:rgba(100, 100, 100, 0);
+    border:none;
+}
+
+.album-name{
+    color:white;
+    align-self:center;
+    width:250px;
+    margin-left:100px
+}
+
+.track-name{
+    color:white;
+    align-self:center;
+    width:250px;
+    margin-left:25px
+}
+
+.number{
+    color:white;
+    margin-left:5px;
+    width:40px;
+    background-color:rgba(100, 100, 100, 0);
+    border:none
+}
+
+.uncur-track{
+    display:flex;margin-top:5px;justify-content:flex-start
+}
+
+.ms{
+    color:white;align-self:center;margin-left:88px
+}
+
+.trackImg{
+    height:45px;
+    width:45px;
+}
+
+.cur-track{
+    display:flex;
+    margin-top:5px;
+    justify-content:flex-start;
+    background-color:rgb(187, 60, 212);
+}
+
+.play-pause-img{
+    display:flex;
+    width:120px;
+}
