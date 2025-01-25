@@ -1,14 +1,41 @@
-//import "request";
-//import { resolve } from "path";
+const client_id = '2b25bd7aba254ef5bda07dddb21861f5';
+const client_secret = 'edd8ead4b35e4551b7641af95e2563cf';
 
-var client_id = '2b25bd7aba254ef5bda07dddb21861f5';
-var client_secret = 'edd8ead4b35e4551b7641af95e2563cf';
+function getCookie(name) {
+  let matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+function setCookie(name, value, options = {}) {
 
-var token;
+  options = {
+    path: '/',
+    ...options
+  };
 
- //import fetch from "node-fetch";
- try {
-  var authOptions = {
+  if (options.expires instanceof Date) {
+    options.expires = options.expires.toUTCString();
+  }
+
+  let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+  for (let optionKey in options) {
+    updatedCookie += "; " + optionKey;
+    let optionValue = options[optionKey];
+    if (optionValue !== true) {
+      updatedCookie += "=" + optionValue;
+    }
+  }
+
+  document.cookie = updatedCookie;
+}
+
+
+async function getToken(){
+  let token;
+
+  const authOptions = {
     method: 'POST',
     headers: {
       Authorization: 'Basic ' + (btoa(client_id + ':' + client_secret)),
@@ -16,48 +43,40 @@ var token;
     },
     body: 'grant_type=client_credentials'
   };
-  var response = await fetch('https://accounts.spotify.com/api/token', authOptions);
+  const responseToken = await fetch('https://accounts.spotify.com/api/token', authOptions);
   // если запрос был успешный
-  var token;
-  if (response.status === 200) {
-      const data = await response.json();
+  if (responseToken.status === 200) {
+      const data = await responseToken.json();
       token = data.access_token;
-      console.log(data);
+      //console.log(data);
+      setCookie("token", token, {'max-age': data.expires_in});
   } else {
-      throw new Error('Something went wrong ' + response.status);
+      throw new Error('Something went wrong ' + responseToken.status);
   }
-  response = await fetch('https://api.spotify.com/v1/users/31j5egzg4mt2o3a74iykqgu2iuz4', {
+  return token;
+}
+
+async function getGeners(token){
+  const fetchGenersResponse = await fetch('https://api.spotify.com/v1/recommendations/available-genre-seeds', {
     headers: {
       'Authorization': 'Bearer ' + token
     }
   });
-  if (response.status === 200) {
-    var data = await response.json();
-    console.log(data);
-  } else {
-    throw new Error('Something went wrong ' + response.status);
-  }
-  response = await fetch('https://api.spotify.com/v1/recommendations/available-genre-seeds', {
-    headers: {
-      'Authorization': 'Bearer ' + token
-    }
-  });
-  if (response.status === 200) {
-    var genresJSON = await response.json();
-    console.log(genresJSON);
-    console.log(genresJSON.genres);
-    const genersSelector = document.querySelectorAll('.geners')
-    //var genres = JSON.parse(genresJSON.genres[0]);
-    var genresCount = genresJSON.genres.length;
+  if (fetchGenersResponse.status === 200) {
+    let genresJSON = await fetchGenersResponse.json();
+    //console.log(genresJSON);
+    //console.log(genresJSON.genres);
+    const genersSelector = document.querySelectorAll('.geners');
+    const genersNameSelector = document.querySelectorAll('.geners-name');
+    let genresCount = genresJSON.genres.length;
     for(let i = 0; i < genersSelector.length; i++) {
-      //genersSelector[i].style.backgroundColor = 'yellow';
-      const paragraph = document.createElement('p');
-      paragraph.textContent = genresJSON.genres[Math.round(Math.random() * genresCount)];
-      paragraph.style.cssText = 'color:#fff;font-size:50px;font-family:Verdana, Geneva, Tahoma, sans-serif;font-weight:bold;text-align:center;margin-top:65px';
-      genersSelector[i].appendChild(paragraph);
+      genersNameSelector[i].textContent = genresJSON.genres[Math.round(Math.random() * genresCount)];
     }
   }
-  response = await fetch('https://api.spotify.com/v1/browse/featured-playlists', {
+}
+
+async function getAlbums(token){
+  const fetchAlbumsResponse = await fetch('https://api.spotify.com/v1/browse/featured-playlists', {
     headers: {
       'Content-Type': 'application/json;charset=UTF-8',
       Authorization: 'Bearer ' + token
@@ -66,19 +85,24 @@ var token;
     locale: 'ru-RU',
     timestamp: "2021-10-23T09:00:00"
   })
-  if (response.status === 200) {
-    data = await response.json();
-    console.log(data.playlists.items);
-    const albumsSelector = document.querySelectorAll('.img');
+  if (fetchAlbumsResponse.status === 200) {
+    const data = await fetchAlbumsResponse.json();
+    const albumsSelector = document.querySelectorAll('.albumImg');
     const nameSelector = document.querySelectorAll('.header-name');
-    for (let i = 0; i < 6; ++i) {
+    for (let i = 0; i < albumsSelector.length; ++i) {
       let name = data.playlists.items[i].name;
-      var image = data.playlists.items[i].images[0].url;
-      //console.log(name + " " + image);
+      let image = data.playlists.items[i].images[0].url;
       albumsSelector[i].setAttribute('src', image);
       nameSelector[i].innerHTML = name;
     }
   }
+}
+
+try {
+  const token = await getToken();
+  await getGeners(token);
+  await getAlbums(token);
+  
 } catch(err) {
   console.error(err);
 }

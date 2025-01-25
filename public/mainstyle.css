@@ -32,6 +32,15 @@
     background: linear-gradient(rgb(67, 176, 235), rgb(218, 124, 236));
 }
 
+.geners-name{
+    color:#fff;
+    font-size:50px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:bold;
+    text-align:center;
+    margin-top:65px
+}
+
 .album{
     display: flex;
     flex-direction: column;
@@ -43,7 +52,7 @@
     background-color: rgb(26, 26, 26);
 }
 
-.img{
+.albumImg{
     display: block;
     margin-left: auto;
     margin-right: auto;
