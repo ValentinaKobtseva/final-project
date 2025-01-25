@@ -1,0 +1,57 @@
+.header__nav{
+    text-align: center;
+    border-radius: 10px;
+    background-color:#2c2c2c;
+    color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    padding:12px 13px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.content__playlists{
+    display: flex;
+    flex-wrap:wrap;
+    height: 100%;
+    justify-content: space-around;
+    align-content:space-around;
+}
+
+.header-playlists{
+    color: #ffffff;
+    padding: 15px;
+    font-size: 20px;
+    
+}
+
+.playlist{
+    display: table;
+    height:250px;
+    width: 191px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: rgb(26, 26, 26);
+}
+
+.img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+.header-name{
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 13px;
+    margin-top:16px;
+}
+
+.playlist:hover{
+    cursor:pointer;
+    transform: scale(1.05);
+}

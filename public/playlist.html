@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+    <link rel="stylesheet" href="./playlist.css"/>
+    <link rel="stylesheet" href="./style.css"/>
+    <script src="./playlist.js" type="module"></script>
+  </head>
+  <body class="app">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <header class="header">
+      <a href="./index.html" class="header__logo link" href="/">
+      <img src="./icons8-spotify.svg" alt="Лого" width="65" height="65">
+      <h1 class="header__title">Spotify</h1>
+      </a>
+    </header>
+    <aside class="aside">
+      <ul class="navtags">
+        <a href="./index.html" class="another-page" href="/">
+            <li class="navtag"><i class="fa fa-home fa-2x"></i> Главная</li>
+        </a>
+        <a href="./mediateka.html" class="another-page" href="/">
+            <li class="navtag"><i class="fa fa-book fa-2x" aria-hidden="true"></i> LoFi медиатека</li>
+        </a>
+        <a href="./create.html" class="another-page" href="/">
+            <li class="navtag"><i class="fa fa-plus-square-o fa-2x" aria-hidden="true"></i> Создать плейлист</li>
+        </a>
+      </ul>
+    </aside>
+    <main class="music-content">
+        <section class="about">
+            <img class="cover-image" name="cover-image"/>
+            <form class="form">
+              <h3 class="header-playlist">Плейлист</h3>
+              <h3 class="name" name="name">Имя твоего плейлиста</h3>
+              <textarea class = "description"></textarea>
+              <adress class="author">Автор плейлиста</adress>
+            </form>
+        </section>
+        <section class="buttons">
+          <button class="btn" type="button" value="Мое значение"><i class="fa fa-play" aria-hidden="true"></i></button>
+          <button class="btn2" type="button" value="Мое значение"><i class="fa fa-pause" aria-hidden="true"></i></button>
+        </section>
+        <ul class="information">
+            <li class="inf">Название</li>
+            <li class="inf">Альбом</li>
+            <li class="inf">Длительность</li>
+        </ul>
+        <hr class="line">
+        <section class="tracks">
+          
+        </section>
+      </main>
+    </body>
+  </html>

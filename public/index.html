@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -19,8 +20,11 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <link rel="stylesheet" href="./mainstyle.css"/>
+    <link rel="stylesheet" href="./style.css"/>
+    <script src="./main.js" type="module"></script>
   </head>
-  <body>
+  <body class="app">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -33,5 +37,59 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <header class="header">
+      <a href="" class="header__logo link" href="/">
+      <img src="./icons8-spotify.svg" alt="Лого" width="65" height="65">
+      <h1 class="header__title">Spotify</h1>
+      </a>
+      <input type="search" class="header__search" placeholder=" Исполнитель, трек или альбом">
+    </header>
+    <aside class="aside">
+      <ul class="navtags">
+        <a href="" class="another-page" href="/">
+          <li class="navtag"><i class="fa fa-home fa-2x"></i> Главная</li>
+        </a>
+        <a href="./mediateka.html" class="another-page">
+          <li class="navtag"><i class="fa fa-book fa-2x" aria-hidden="true"></i> LoFi медиатека</li>
+        </a>
+        <a href="./create.html" class="another-page" href="/">
+          <li class="navtag"><i class="fa fa-plus-square-o fa-2x" aria-hidden="true"></i> Создать плейлист</li>
+        </a>
+      </ul>
+    </aside>
+    <main class="content">
+      <h2 class="header-recom">Жанры для тебя</h2>
+      <section class="content__recom-g">
+        <div class="geners"></div>
+        <div class="geners"></div>
+      </section>
+      <h2 class="header-recom">Альбомы для тебя</h2>
+      <section class="content__recom-a">
+        <div class="album">
+          <img src="https://fakeimg.pl/130/FF69B4/fff?text=img" class="img" width="130" height="130">
+              <h3 class="header-name">Album name</h3>
+        </div>
+        <div class="album">
+          <img src="https://fakeimg.pl/130/FF69B4/fff?text=img" class="img" width="130" height="130">
+              <h3 class="header-name">Album name</h3>
+        </div>
+        <div class="album">
+          <img src="https://fakeimg.pl/130/FF69B4/fff?text=img" class="img" width="130" height="130">
+              <h3 class="header-name">Album name</h3>
+        </div>
+        <div class="album">
+          <img src="https://fakeimg.pl/130/FF69B4/fff?text=img" class="img" width="130" height="130">
+              <h3 class="header-name">Album name</h3>
+        </div>
+        <div class="album">
+          <img src="https://fakeimg.pl/130/FF69B4/fff?text=img" class="img" width="130" height="130">
+              <h3 class="header-name">Album name</h3>
+        </div>
+        <div class="album">
+          <img src="https://fakeimg.pl/130/FF69B4/fff?text=img" class="img" width="130" height="130">
+              <h3 class="header-name">Album name</h3>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
